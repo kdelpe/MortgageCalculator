@@ -30,15 +30,14 @@ public class MortgageCalculator {
         double mortgage = principal
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
+                
         return mortgage;
     }
 
     public double[] getRemainingBalances() {
         var balances = new double[getNumberOfPayments()];
-        for (short month = 1; month <= balances.length; month++)
-        balances[month - 1] = calculateBalance(month);
-
+        for (short month = 1; month <= balances.length; month++)         
+            balances[month - 1] = calculateBalance(month);
         return balances;
     }
 
